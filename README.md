@@ -158,7 +158,7 @@ telescope.setup {
           ["<C-k>"] = lga_actions.quote_prompt(),
           ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
           -- freeze the current list and start a fuzzy search in the frozen list
-          ["<C-space>"] = actions.to_fuzzy_refine,
+          ["<C-space>"] = lga_actions.to_fuzzy_refine,
         },
       },
       -- ... also accepts theme settings, for example:
@@ -175,6 +175,12 @@ telescope.load_extension("live_grep_args")
 ```
 
 This extension accepts the same options as `builtin.live_grep`, check out `:help live_grep` and `:help vimgrep_arguments` for more information. Additionally it also accepts `theme` and `layout_config`.
+
+`live_grep_args` args
+
+| Name | Type | Description | Example |
+| --- | --- | --- | --- |
+| `additional_args` | `function|table` | additional arguments to be passed on. Can be fn(opts) -> tbl | `{ '-tmd' }` |
 
 
 ### Mapping recipes:
